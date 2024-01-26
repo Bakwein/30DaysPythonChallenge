@@ -58,10 +58,12 @@ print("circum_of_circle",circum_of_circle)
 
 input_radius = int(input("Radius : "))
 
-area2 = input_radius **2
+import math
+
+area2 = math.pi * input_radius **2
 print("area2:",area2)
 
-import math
+
 circum_of_circle2 = 2 * math.pi * input_radius 
 print("circum_of_circle2",circum_of_circle2)
 
