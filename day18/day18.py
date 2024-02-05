@@ -41,10 +41,19 @@ print(list(fltr))
 
 sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
 
-import string
-
-print(string.punctuation)
-print(type(string.punctuation))
+def clean_text(x):
+    return re.sub(r'[^A-Za-z ]', '', x)
 
 
-print(re.sub(r'[^A-Za-z ]', '', sentence))
+print(clean_text(sentence))
+
+def most_frequent_words(x):
+    kelimeler = re.findall(r'\b\w+\b',x)
+    s = Counter(kelimeler)
+    return_l = list()
+    for a,b in s.items():
+        if b > 1:
+            return_l.append([a,b])
+    return return_l
+
+print(most_frequent_words(clean_text(sentence)))
