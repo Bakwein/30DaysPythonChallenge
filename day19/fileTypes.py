@@ -32,8 +32,6 @@ with open('./day19/test.json', 'w') as f:
 
 
 #csv
-    
-import csv
 
 import csv
 with open('./day19/deneme.csv') as f:
